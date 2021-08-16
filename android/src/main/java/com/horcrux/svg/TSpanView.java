@@ -165,7 +165,6 @@ class TSpanView extends TextView {
     }
 
     @SuppressWarnings("deprecation")
-    @SuppressLint("WrongConstant")
     private StaticLayout getStaticLayout(TextPaint tp, Layout.Alignment align, boolean includeFontPadding, SpannableString text, int width) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             return new StaticLayout(
@@ -177,6 +176,7 @@ class TSpanView extends TextView {
                     0.f,
                     includeFontPadding);
         } else {
+            @SuppressLint("WrongConstant")
             return StaticLayout.Builder.obtain(text, 0, text.length(), tp, width)
                     .setAlignment(align)
                     .setLineSpacing(0.f, 1.f)
