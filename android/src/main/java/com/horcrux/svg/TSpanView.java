@@ -165,6 +165,7 @@ class TSpanView extends TextView {
     }
 
     @SuppressWarnings("deprecation")
+    @SuppressLint("WrongConstant")
     private StaticLayout getStaticLayout(TextPaint tp, Layout.Alignment align, boolean includeFontPadding, SpannableString text, int width) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             return new StaticLayout(
